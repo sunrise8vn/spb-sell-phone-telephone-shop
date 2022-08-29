@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Manager</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/sweetalert/sweetalert2.min.css">
+    <link rel="stylesheet" href="/assets/css/product.css">
+</head>
+
+<body>
+<div class="container-fluid header">
+    <div class="row p-4 flex-row-reverse">
+        <div class="col-sm-2" style="margin-right: 100px;">
+            <ul class="nav nav-pills justify-content-end">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
+                             width="40" height="40" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-center">
+                        <li class="dropdown-item">
+                            <a href="#" class="text-decoration-none" id="informationProduct">
+                                <i class="fa fa-history" aria-hidden="true"></i>
+                                <span>Information</span>
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="text-decoration-none" id="createProduct">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>Add Product</span>
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="nav-menu">
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span> Log Out</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-3">
+            <div class="" style="position: relative;">
+                <input type="text" class="form-control" id="ipSearch" placeholder="search...">
+                <i class="fa-solid fa-magnifying-glass iconSearch"></i>
+            </div>
+        </div>
+        <div class="col-sm-6 table-title">
+            <h1>List of Product <i class="fa-solid fa-mobile-screen"></i></h1>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container">
+    <div class="product">
+        <div class="product-item">
+            <div class="content-product">
+                <div class="image">
+                    <img src="/assets/img/file-sketchup.jpg" alt="" width="300" height="200">
+                </div>
+                <div class="gallery-product">
+                    <h3>Iphone 6</h3>
+                    <p><b> Price: </b></p>
+                    <p>Quantity:</p>
+                    <div class="select-tab btnOpacity d-none">
+                        <button type="button" id="btnEdit" class="btn btn-success btn btn-secondary" title="Edit"
+                                aria-hidden="true" data-toggle="modal" data-target="#mdEdit">Edit</button>
+                        <button type="button" class="btn btn-primary" id="btnOder">Oder</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="content-product">
+                <div class="image">
+                    <img src="/assets/img/file-sketchup.jpg" alt="" width="300" height="200">
+                </div>
+                <div class="gallery-product">
+                    <h3>Iphone 6</h3>
+                    <p><b> Price: </b></p>
+                    <p>Quantity:</p>
+                    <div class="select-tab d-none btnOpacity">
+                        <button type="button" class="btn btn-secondary">Edit</button>
+                        <button type="button" class="btn btn-primary">Sell</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="content-product">
+                <div class="image">
+                    <img src="/assets/img/file-sketchup.jpg" alt="" width="300" height="200">
+                </div>
+                <div class="gallery-product">
+                    <h3>Iphone 6</h3>
+                    <p><b> Price: </b></p>
+                    <p>Quantity:</p>
+                    <div class="select-tab d-none btnOpacity">
+                        <button type="button" class="btn btn-secondary">Edit</button>
+                        <button type="button" class="btn btn-primary">Sell</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="content-product">
+                <div class="image">
+                    <img src="/assets/img/file-sketchup.jpg" alt="img telephone" width="300" height="200">
+                </div>
+                <div class="gallery-product">
+                    <h3>Iphone 6</h3>
+                    <p><b> Price: </b></p>
+                    <p>Quantity:</p>
+                    <div class="select-tab d-none btnOpacity">
+                        <button type="button" class="btn btn-secondary">Edit</button>
+                        <button type="button" class="btn btn-primary">Sell</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cart d_none">
+    <button type="button" class="close btn btn-close btnClose" id="btnClose"></button>
+    <div class="cart-head">
+        <h1>Your cart</h1>
+        <hr>
+    </div>
+    <div class="cart-item d-flex justify-content-between">
+        <button type="button" class="close btn btn-close" id="btnCloseCartItem" data-dismiss="modal"
+                aria-label="Close"></button>
+        <img src="/assets/img/file-sketchup.jpg" alt="img telephone">
+        <div class="cart-item-info">
+            <div class="cart-item-title">
+                <h1>Iphone 6</h1>
+            </div>
+            <div class="cart-item-quantity">
+                <a href="#" id="btnMinus"><i class="fa-solid fa-angle-left"></i></a>
+                <input type="text" id="inputQuantity" value="1" maxlength="2" readonly>
+                <a href="#" id="btnPlus"><i class="fa-solid fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="pay">
+        <button type="button" class="btnOrder">Order</button>
+    </div>
+</div>
+
+<!-- Modal create -->
+<div class="modal fade" id="mdCreate" data-backdrop="static" data-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Customer</h5>
+                <button type="button" class="close btn btn-close btnClose" data-dismiss="modal" aria-label="Close">
+                    <!-- <i class="fa-solid fa-xmark"></i> -->
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-alert-danger hide"></div>
+                <form id="frmCreate" action="" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="productName" class="fw-bold">Product Name</label>
+                            <input type="text" id="productName" name="productName" class="form-control">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="file" class="fw-bold">Image</label>
+                            <input type="file" id="file" name="file" class="form-control" accept=".png, .jpg, .jpeg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="price" class="fw-bold">Price</label>
+                            <input name="price" id="price" class="form-control" />
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="quantity" class="fw-bold">Quantity</label>
+                            <input name="quantity" id="quantity" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <label for="description" class="fw-bold">Description</label>
+                            <textarea id="description" name="description" class="input-group" style="width: 100%;"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btnClose" data-dismiss="modal">Close</button>
+                <button type="button" id="btnCreate" class="btn btn-outline-primary">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Create
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit -->
+
+<div class="modal fade" id="mdEdit" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Edit information</h5>
+                <button type="button" class="close btn btn-close btnClose" data-dismiss="modal" aria-label="Close">
+                    <!-- <i class="fa-solid fa-xmark"></i> -->
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-alert-danger hide"></div>
+                <form id="frmEdit" method="post" novalidate="novalidate">
+                    <!-- <input type="hidden" id="idUp">
+                    <input type="hidden" id="balanceUp"> -->
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="form-label">Full name</label>
+                                    <input type="text" class="form-control" id="fullNameUp" name="fullNameUp">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-md-4">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="emailUp" name="emailUp">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-md-4">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phoneUp" phone="phoneUp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-4 col-md-3">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="form-label">Province</label>
+                                    <select name="provinceUp" id="provinceUp" class="form-select"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 col-md-3">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="form-label">District</label>
+                                    <select name="districtUp" id="districtUp" class="form-select"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 col-md-3">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="form-label">Ward</label>
+                                    <select name="wardUp" id="wardUp" class="form-select"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 col-md-3">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="addressUp" name="addressUp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-secondary btnClose"
+                                        data-dismiss="modal">Close</button>
+                                <button type="button" id="btnUpdate" class="btn btn-outline-secondary">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    Save changes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/jquery/jquery-v3.6.0.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="/assets/sweetalert/sweetalert2.all.min.js"></script>
+<script type="text/javascript" src="/assets/jquery/dist/jquery.validate.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+
+<script>
+    let product = new Product();
+    function selectTable() {
+        $(".content-product").on('click', function () {
+            $(".content-product .gallery-product").find(".select-tab").addClass('d-none').removeClass('btnOpacity');
+            $(this).find(".select-tab").css('opacity', '0');
+            $(this).find(".select-tab").removeClass("d-none").animate({ opacity: 1 });
+
+        })
+    }
+    $('#btnMinus').on('click', function () {
+        let quantity = +$("#inputQuantity").val();
+        console.log(quantity);
+        if (quantity > 1) {
+            quantity -= 1;
+            $("#inputQuantity").val(quantity);
+        }
+    })
+    $('#btnPlus').on('click', function () {
+        let quantity = +$("#inputQuantity").val();
+        console.log(quantity);
+        if (quantity >= 1) {
+            quantity += 1;
+            $("#inputQuantity").val(quantity);
+        }
+    })
+    $('#btnEdit').on('click', function () {
+        $('#mdEdit').modal('show');
+    })
+    $('.btnClose').on('click', function () {
+        $('#mdCreate').modal('hide');
+        $('#mdEdit').modal('hide');
+        $('.cart').addClass('d_none');
+        $('.cart').animate({left: '0px'});
+    })
+    $('#btnOder').on('click', function () {
+        $('.cart').removeClass('d_none');
+        $('.cart').animate({ left: '1070px' });
+    })
+    $('#btnCloseCartItem').on('click', function () {
+        $(this).parent().remove();
+    })
+    $('#createProduct').on('click', function () {
+        $('#mdCreate').modal('show');
+    })
+
+    $('#btnCreate').on('click', function () {
+
+        let formData = new FormData();
+        formData.append("productName", $('#productName').val().toString());
+        formData.append("price", $('#price').val().toString());
+        formData.append("quantity", $('#quantity').val().toString());
+        formData.append("description", $('#description').val().toString());
+        formData.append("file", $('#file')[0].files[0]);
+
+        // let formData = new FormData();
+        // formData.append("name", $('#productName').val().toString());
+        // formData.append("file", $('#file')[0].files[0]);
+
+        $.ajax({
+            type: "POST",
+            contentType: false,
+            cache: false,
+            processData: false,
+            url: "http://localhost:8086/api/products/create", // http://localhost:8080/api/products/
+            data: formData
+        }).done((data) => {
+            console.log(data)
+            product = data;
+
+            // page.commands.addRow();
+            //
+            // App.showSuccessAlert(App.SUCCESS_CREATED);
+            //
+            // page.dialogs.element.modalCreateProduct.modal('hide');
+            //
+            // page.commands.handleImagePopup();
+
+            $('#mdCreate').modal('hide');
+            $("#frmCreate")[0].reset();
+
+        }).fail((err) => {
+            console.log(err)
+            // App.showErrorAlert(App.ERROR_404);
+        }).always(function () {
+            // page.element.loader.addClass("hide");
+            // page.element.btnSave.prop('disabled', false);
+            console.log(formData);
+        });
+    })
+    selectTable();
+</script>
+</body>
+
+</html>
